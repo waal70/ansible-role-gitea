@@ -9,7 +9,7 @@ services:
     networks:
       - gitea
     volumes:
-      - /data/gitea:/data
+      - /appdata/gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -23,7 +23,7 @@ services:
       - "4321:4321"
     user: "1001:1001"
     volumes:
-      - /data/gitea-mirror:/app/data
+      - /appdata/gitea-mirror:/app/data
     environment:
       # === ABSOLUTELY REQUIRED ===
       # This MUST be set and CANNOT be changed via UI
