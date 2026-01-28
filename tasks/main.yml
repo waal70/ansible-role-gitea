@@ -29,14 +29,3 @@
     stack_list:
       - name: gitea
         file: gitea.yml # file is in files/ of this role
-
-- name: "Return the gitea yaml back to its placeholder version"
-  ansible.builtin.copy:
-    src: gitea.yml.placeholder
-    dest: "{{ role_path }}/files/gitea.yml"
-    owner: "{{ interactive_user }}"
-    group: "{{ interactive_user }}"
-    mode: '0644'
-    remote_src: false
-    force: true
-  delegate_to: localhost
